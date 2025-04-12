@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeRoadAI - Preview</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation Bar -->
+    <header class="bg-blue-950 px-6 py-4 flex justify-between items-center shadow-md">
+        <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white mr-3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span class="text-2xl font-bold">SafeRoadAI</span>
+        </div>
+        <nav class="hidden md:flex space-x-6">
+            <a href="#features" class="text-gray-300 hover:text-white">Features</a>
+            <a href="#dashboard" class="text-gray-300 hover:text-white">Dashboard</a>
+            <a href="#about" class="text-gray-300 hover:text-white">About</a>
+            <a href="#contact" class="text-gray-300 hover:text-white">Contact</a>
+        </nav>
+        <button class="bg-orange-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-orange-600 transition-colors">
+            Get App
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-blue-950 py-16 px-6 md:py-24 md:px-12">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+                    Predict the Risk.<br>
+                    Prevent the Crash.<br>
+                    Protect Lives.
+                </h1>
+                <p class="text-gray-300 text-xl max-w-2xl">
+                    Making roads smarter and safer with AI-powered risk prediction and real-time alerts.
+                </p>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="relative mb-8 max-w-2xl">
+                <input
+                    type="text"
+                    placeholder="Search for a location..."
+                    class="w-full bg-blue-900 text-white px-4 py-3 pr-10 rounded-lg border border-blue-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    id="search"
+                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute right-3 top-3 text-gray-400">
+                    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+            <div id="infoBox" class="w-full max-w-2xl bg-grey
+            -100 p-6 rounded-lg border border-blue-500 shadow-md" style="display: none">
+                <h2 class="text-xl font-semibold text-blue-800 mb-4">Prediction for <span id="locationName">-</span></h2>
+                <p>Weather: Heavy Rain</p>
+                <p>Traffic Density: Severe</p>
+                <p>Road Geometry: Sharp Turn</p>
+                <p>Driver Behavior: Sudden Braking Detected</p>
+                <p>Predicted Risk: Very High</p>
+                <p>Safety Score: 10/100</p>
+                <p class="text-red-600 font-medium mt-2"><strong>Recommendation:</strong> Avoid travel unless necessary. Drive at minimal speed.</p>
+            </div>
+            <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                <button class="bg-orange-500 px-6 py-3 rounded-md font-medium hover:bg-orange-600 transition-colors flex items-center justify-center">
+                    Explore Dashboard
+                </button>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Strip -->
+    <section class="bg-blue-950 border-t border-b border-blue-800 py-6 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="flex items-center">
+                    <div class="bg-red-500 rounded-full h-12 w-12 flex items-center justify-center mr-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400">Today's Accidents Predicted</p>
+                        <p class="text-2xl font-bold">136</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center">
+                    <div class="bg-yellow-600 rounded-full h-12 w-12 flex items-center justify-center mr-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400">Alerts Sent</p>
+                        <p class="text-2xl font-bold">2,489</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center">
+                    <div class="bg-green-600 rounded-full h-12 w-12 flex items-center justify-center mr-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400">Lives Saved</p>
+                        <p class="text-2xl font-bold">62</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center">
+                    <div class="bg-blue-500 rounded-full h-12 w-12 flex items-center justify-center mr-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400">Zones Monitored</p>
+                        <p class="text-2xl font-bold">741</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Content Preview -->
+    <section id="dashboard" class="flex-1 py-8 px-6">
+        <div class="max-w-6xl mx-auto">
+            <!-- Location Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h2 class="text-2xl font-bold">Rourkela</h2>
+                    <p class="text-sm text-gray-400">Real-time safety insights</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <select class="bg-blue-900 bg-opacity-50 text-sm rounded-md px-3 py-2 border border-blue-700">
+                        <option>Rourkela</option>
+                        <option>Bhuvneshwar</option>
+                        <option>Delhi</option>
+                        <option>Mumbai</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Risk Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <div class="bg-blue-900 bg-opacity-50 p-4 rounded-lg border border-blue-800">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="font-semibold">Panposh Junction</h3>
+                        <div class="rounded-full bg-red-900 bg-opacity-50 p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-500"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                        </div>
+                    </div>
+                    <p class="text-xs text-red-400">Highest Risk: 89/100</p>
+                </div>
+                
+                <!-- More risk cards would be here -->
+            </div>
+
+            <!-- Alerts Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2">
+                    <div class="bg-blue-900 bg-opacity-50 p-4 rounded-lg border border-blue-800 mb-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h2 class="text-lg font-bold">Real-Time Alerts</h2>
+                            <span class="text-xs text-orange-400 cursor-pointer hover:underline">View All</span>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="border-l-4 border-red-500 pl-3 py-2">
+                                <div class="flex justify-between">
+                                    <h4 class="font-semibold">Major Accident Risk</h4>
+                                    <span class="text-xs text-gray-500">Now</span>
+                                </div>
+                                <p class="text-xs text-gray-400">I-95 North, Exit 23 - Heavy traffic & construction</p>
+                                <div class="flex justify-between mt-1">
+                                    <span class="text-xs text-red-400">HIGH RISK: 92/100</span>
+                                    <button class="text-xs text-orange-400 hover:underline">View</button>
+                                </div>
+                            </div>
+                            
+                            <!-- More alerts would be here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safe Route Finder -->
+                <div>
+                    <div class="bg-gradient-to-br from-orange-600 to-orange-700 rounded-lg p-4 text-white h-full">
+                        <h2 class="text-lg font-bold mb-3">Find SafeRoute</h2>
+                        
+                        <div class="space-y-3 mb-3">
+                            <div>
+                                <label class="text-xs text-orange-100">Starting Point</label>
+                                <input type="text" placeholder="Enter starting location" class="w-full bg-orange-800 bg-opacity-50 text-white placeholder-orange-300 border border-orange-500 rounded px-3 py-2 mt-1 text-sm">
+                            </div>
+                            
+                            <div>
+                                <label class="text-xs text-orange-100">Destination</label>
+                                <input type="text" placeholder="Enter destination" class="w-full bg-orange-800 bg-opacity-50 text-white placeholder-orange-300 border border-orange-500 rounded px-3 py-2 mt-1 text-sm">
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-white text-orange-600 font-semibold py-2 rounded flex items-center justify-center hover:bg-gray-100 transition-colors">
+                            <span>Calculate Safest Route</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features" class="bg-blue-950 py-12 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center">How SafeRoadAI Works</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-blue-900 bg-opacity-50 p-6 rounded-lg border border-blue-800">
+                    <div class="rounded-full bg-orange-500 h-12 w-12 flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Predict</h3>
+                    <p class="text-gray-300">Our AI analyzes historical accident data, real-time traffic, and weather conditions to predict accident risk with 90% accuracy.</p>
+                </div>
+                
+                <!-- More feature cards would be here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (simplified) -->
+    <footer class="bg-blue-950 border-t border-blue-800 py-8 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="border-t border-blue-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2025 SafeRoadAI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const searchInput = document.getElementById('search');
+        const infoBox = document.getElementById('infoBox');
+    
+        // Static prediction data
+        const predictionData = {
+            "default": {
+                weather: "Heavy Rain",
+                traffic: "Severe",
+                geometry: "Sharp Turn",
+                behavior: "Sudden Braking Detected",
+                risk: "Very High",
+                score: "10/100",
+                recommendation: "Avoid travel unless necessary. Drive at minimal speed."
+            }
+        };
+    
+        function updateInfoBox(location) {
+            const data = predictionData["default"];
+            infoBox.innerHTML = `
+                <h2 class="text-xl font-semibold text-blue-800 mb-4">Prediction for <span>${location}</span></h2>
+                <p><strong>Weather:</strong> ${data.weather}</p>
+                <p><strong>Traffic Density:</strong> ${data.traffic}</p>
+                <p><strong>Road Geometry:</strong> ${data.geometry}</p>
+                <p><strong>Driver Behavior:</strong> ${data.behavior}</p>
+                <p><strong>Predicted Risk:</strong> ${data.risk}</p>
+                <p><strong>Safety Score:</strong> ${data.score}</p>
+                <p class="text-red-600 font-medium mt-2"><strong>Recommendation:</strong> ${data.recommendation}</p>
+            `;
+        }
+    
+        searchInput.addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                const value = this.value.trim();
+                if (value !== "") {
+                    updateInfoBox(value); // fill the box before showing it
+                    infoBox.style.display = 'block';
+                } else {
+                    infoBox.style.display = 'none';
+                }
+            }
+        });
+    </script>
+    
+    
+</body>
+</html>
